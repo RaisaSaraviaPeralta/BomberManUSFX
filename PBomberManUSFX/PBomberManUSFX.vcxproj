@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{df1cb4ec-e18f-476e-adcb-bcc5d49e3ea3}</ProjectGuid>
+    <ProjectGuid>{DF1CB4EC-E18F-476E-ADCB-BCC5D49E3EA3}</ProjectGuid>
     <RootNamespace>PBomberManUSFX</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>PEjemploUSFX</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,7 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Principal.cpp" />
+    <ClCompile Include="Bomber.cpp" />
+    <ClCompile Include="Detonador.cpp" />
+    <ClCompile Include="Enemigo.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="Muro.cpp" />
+    <ClCompile Include="principal.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bomber.h" />
+    <ClInclude Include="Detonador.h" />
+    <ClInclude Include="Enemigo.h" />
+    <ClInclude Include="Explosion.h" />
+    <ClInclude Include="Muro.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
