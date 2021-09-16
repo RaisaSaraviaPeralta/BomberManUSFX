@@ -24,6 +24,7 @@
     <ProjectGuid>{df1cb4ec-e18f-476e-adcb-bcc5d49e3ea3}</ProjectGuid>
     <RootNamespace>PBomberManUSFX</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>PEjemploUSFX</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
