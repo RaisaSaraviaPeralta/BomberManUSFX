@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
 	GameManager* gm01 = new GameManager();
-
+	gm01->onExecute();
 	/*int* a = nullptr;
      *a = 10;
 	cout << *a <<endl;*/
@@ -40,5 +40,5 @@ int main() {
 	d1.Explotar();*/
 
 
-	return 0;
+	//return 0;
 }
