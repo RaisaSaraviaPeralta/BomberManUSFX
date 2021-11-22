@@ -1,9 +1,15 @@
 #include <iostream>
 #include "Detonador.h"
+#include "GameObject.h"
+#include "GameActor.h"
+
 
 using namespace std;
 
 int main() {
+	GameObject o1;
+	GameActor a1;
+
 
 	cout << "Raisa Saravia Peralta" << endl;
 	cout << "CU: 35-4555" << endl;

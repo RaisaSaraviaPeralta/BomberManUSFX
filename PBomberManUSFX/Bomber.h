@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+using namespace std;
 class Bomber
 {
 private:
@@ -21,8 +23,9 @@ public:
 	void setPosicionY(int _posicionY) { posicionY = _posicionY; }
 
 	void Morir();
-	void Correr();
+	void Moverse();
 	void ColocarBomba();
+	void mostrarInformacion();
 
 };
 

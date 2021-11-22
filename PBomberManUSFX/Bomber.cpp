@@ -4,10 +4,15 @@ void Bomber::Morir()
 {
 }
 
-void Bomber::Correr() {
+void Bomber::Moverse() {
 
 }
 
 void Bomber::ColocarBomba()
 {
+}
+
+void Bomber::mostrarInformacion()
+{
+	cout<< "ancho avatar" << anchoAvatar << "alto avatar " << altoAvatar << endl;
 }
