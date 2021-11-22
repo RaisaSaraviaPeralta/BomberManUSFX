@@ -144,6 +144,7 @@
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="GameActor.cpp" />
+    <ClCompile Include="GameDirecctions.h" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Muro.cpp" />
     <ClCompile Include="principal.cpp" />
@@ -156,6 +157,10 @@
     <ClInclude Include="GameActor.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Muro.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PBomberManUSFX.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

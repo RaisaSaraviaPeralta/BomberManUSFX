@@ -11,7 +11,9 @@ protected:
 	int numeroFamiliares;
 public: 
 	GameObject();
-	int numeroVisualizaciones;
+	GameObject(string _nombre);
+
+	//int numeroVisualizaciones;
 	int getIdGameObject() { return idGameObject; }
 	string getNombre() { return nombre; }
 	bool getEliminar() { return eliminar; }
@@ -22,11 +24,11 @@ public:
 	void setEliminar(bool _eliminar) { eliminar = _eliminar; }
 
 //metodo varios
-	/*virtual void render() = 0;
-	virtual void update() = 0;
-	virtual void handleEvent(SDL_Event* event) = 0;
+	virtual void render()=0;
+	virtual void update() =0;
+	//virtual void handleEvent(SDL_Event* event) = 0;
 	virtual void deleteGameObject() { eliminar = true; }
-	virtual void free() {};*/
+	virtual void free() {};
 
 
 

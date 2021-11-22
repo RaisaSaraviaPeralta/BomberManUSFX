@@ -1,8 +1,11 @@
 #pragma once
 #include "GameObject.h"
-class GameActor :
-    public GameObject
+#include "GameDirecctions.h"
+
+
+class GameActor : public GameObject
 {
+
 protected:
 
 	bool solido;
@@ -18,28 +21,22 @@ protected:
 	int energia;
 	int vidas;
 
-	//representacion grafica del objeto
-	//Texture* textura;
-	//AnimationFrames* framesAnimacion;
+	/*Tile* tileActual;
+	Tile* tileSiguiente;*/
 
-	//Tile* tileActual;
-	//Tile* tileSiguiente;
+	GameDirection direccionActual;
+	GameDirection direccionSiguiente;
 
-	//MoveDirection direccionActual;
-	//MoveDirection direccionSiguiente;
-
-	//int numeroFrame;
-	//int contadorFrames;
-
-	//SDL_Rect* colisionador;
+	//std::shared_ptr<Animation> animacion;
 public:
 	// Propiedades
 	/*static TilesGraph* tilesGraph;*/
 
 	//Constructores & destructores
-	//GameActor();
-	//GameActor(Texture* _textura);
-	//~GameActor();
+	GameActor();
+	GameActor(string _nombre);
+	/*GameActor(Texture* _textura);
+	~GameActor();*/
 
 	// Metodos accesores
 	bool getSolido() { return solido; }
@@ -54,10 +51,10 @@ public:
 	int getEnergia() { return energia; }
 	int getVidas() { return vidas; }
 
-	//Tile* getTileActual() { return tileActual; }
-	//Tile* getTileSiguiente() { return tileSiguiente; }
-	//MoveDirection getDireccionActual() { return direccionActual; }
-	//MoveDirection getDireccionSiguiente() { return direccionSiguiente; }
+	/*Tile* getTileActual() { return tileActual; }
+	Tile* getTileSiguiente() { return tileSiguiente; }*/
+	GameDirection getDireccionActual() { return direccionActual; }
+	GameDirection getDireccionSiguiente() { return direccionSiguiente; }
 
 	void setSolido(bool _solido) { solido = _solido; }
 	void setIndestructible(bool _indestructible) { indestructible = _indestructible; }
@@ -72,25 +69,25 @@ public:
 	void setVidas(int _vidas) { vidas = _vidas; }
 
 	/*virtual void setTileActual(Tile* _tileNuevo) = 0;
-	void setTileSiguiente(Tile* _tileSiguiente) { tileSiguiente = _tileSiguiente; }
-	void setDireccionActual(MoveDirection _direccionActual) { direccionActual = _direccionActual; }
-	void setDireccionSiguiente(MoveDirection _direccionSiguiente) { direccionSiguiente = _direccionSiguiente; }*/
+	void setTileSiguiente(Tile* _tileSiguiente) { tileSiguiente = _tileSiguiente; }*/
+	void setDireccionActual(GameDirection _direccionActual) { direccionActual = _direccionActual; }
+	void setDireccionSiguiente(GameDirection _direccionSiguiente) { direccionSiguiente = _direccionSiguiente; }
 	/*void setFramesDireccion(int _framesDireccion) { framesDireccion = _framesDireccion; }
 	void setColisionador(SDL_Rect* _colisionador) { colisionador = _colisionador; }*/
 
 	// Metodos varios
 	/*bool revisarColision(const SDL_Rect* _otroColisionador);
 	bool revisarColision(const SDL_Rect* _colisionador1, const SDL_Rect* _colisionador2);*/
-	//bool tratarDeMover(MoveDirection _direccionNueva);
+	//bool tratarDeMover(GameDirection _direccionNueva);
 	/*
 	int restarEnergia();
 	int restarVida();*/
 
 	//Metodos virtuales, redefinidos o sobrecargados
-	//virtual void render(SDL_Rect& _camera);
-	//virtual void update(const unsigned int delta);
-	//virtual void handleEvent(SDL_Event* event) {};
-	//virtual void deleteGameObject() {};
+	virtual void render() {};
+	virtual void update() {};
+	/*virtual void handleEvent(SDL_Event* event) {};
+	virtual void deleteGameObject() {};*/
 };
 
 
