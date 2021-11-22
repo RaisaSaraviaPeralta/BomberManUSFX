@@ -7,7 +7,10 @@ class GameActor : public GameObject
 {
 
 protected:
-
+	int posicionX;
+	int posicionY;
+	int ancho;
+	int alto;
 	bool solido;
 	bool indestructible;
 	bool visible;
@@ -39,6 +42,10 @@ public:
 	~GameActor();*/
 
 	// Metodos accesores
+	int getPosicionX() { return posicionX; }
+	int getPosiciony() { return posicionY; }
+	int getAncho() { return ancho; }
+	int getAlto() { return alto; }
 	bool getSolido() { return solido; }
 	bool getIndestructible() { return indestructible; }
 	bool getVisible() { return visible; }
@@ -55,7 +62,10 @@ public:
 	Tile* getTileSiguiente() { return tileSiguiente; }*/
 	GameDirection getDireccionActual() { return direccionActual; }
 	GameDirection getDireccionSiguiente() { return direccionSiguiente; }
-
+	void setPosicionX(int _posicionX) { posicionX = _posicionX; }
+	void setPosicionY(int _posicionY) { posicionY = _posicionY; }
+	void setAncho(int _ancho) { ancho = _ancho; }
+	void setAlto(int _alto) { alto = _alto; }
 	void setSolido(bool _solido) { solido = _solido; }
 	void setIndestructible(bool _indestructible) { indestructible = _indestructible; }
 	void setVisible(bool _visible) { visible = _visible; }

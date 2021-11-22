@@ -8,8 +8,10 @@ private:
 	int altoAvatar;
 	int posicionX;
 	int posicionY;
-
+	int numeroVidas;
 public:
+	Bomber();
+	Bomber(int _anchoAvatar, int _altoAvatar, int _numeroVidas);
 	int getAnchoAvatar() { return anchoAvatar; }
 	void setAnchoAvatar(int _anchoAvatar) { anchoAvatar = _anchoAvatar;}
 
@@ -22,9 +24,12 @@ public:
 	int getPosicionY() { return posicionY; }
 	void setPosicionY(int _posicionY) { posicionY = _posicionY; }
 
-	void Morir();
-	void Moverse();
-	void ColocarBomba();
+	int getNumeroVidas() { return numeroVidas; }
+	void setNumeroVidas(int _numeroVidas) { numeroVidas = _numeroVidas; }
+
+	void morir();
+	void moverse();
+	void colocarBomba();
 	void mostrarInformacion();
 
 };
