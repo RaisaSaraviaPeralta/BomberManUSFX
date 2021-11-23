@@ -17,12 +17,17 @@ class GameManager
 private:
 	/*SDL_Window* gWindow;
 	SDL_Renderer* gRenderer;*/
-
+	SDL_Window* gWindow = NULL;
+	SDL_Surface* gScreenSurface = NULL;
+	SDL_Surface* gHelloWorld = NULL;
 
 
 public:
 	GameManager();
 	bool onInit();
 	int onExecute();
+	bool init();
+	bool loadMedia();
+	void close();
 };
 
