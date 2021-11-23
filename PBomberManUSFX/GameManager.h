@@ -19,6 +19,8 @@ public:
 	SDL_Renderer* gRenderer;*/
 	SDL_Window* gWindow ;
 	SDL_Renderer* gRenderer;
+	SDL_Surface* gHelloWorld;
+	SDL_Texture* gTexture;
 	
 
 
@@ -27,5 +29,6 @@ public:
 	bool onInit();
 	int onExecute();
 	void close();
+	bool loadMedia();
 };
 

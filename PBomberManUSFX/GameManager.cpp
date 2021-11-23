@@ -2,7 +2,8 @@
 GameManager::GameManager() {
 	gWindow = nullptr;
 	gRenderer = nullptr;
-	
+	gHelloWorld = nullptr;
+	gTexture = nullptr;
 }
 
 bool GameManager::onInit() {
@@ -66,6 +67,21 @@ void  GameManager:: close()
 	SDL_Quit();
 }
 
+bool GameManager:: loadMedia()
+{
+	//Loading success flag
+	bool success = true;
+
+	//Load splash image
+	gHelloWorld = SDL_LoadBMP("02_getting_an_image_on_the_screen/hello_world.bmp");
+	if (gHelloWorld == NULL)
+	{
+		printf("Unable to load image %s! SDL Error: %s\n", "02_getting_an_image_on_the_screen/hello_world.bmp", SDL_GetError());
+		success = false;
+	}
+
+	return success;
+}
 
 	int GameManager::onExecute(){
 		if (!onInit()) {
@@ -77,6 +93,22 @@ void  GameManager:: close()
 		{
 			//aqui inicia el juego
 			//Load media
+			if (!loadMedia()) {
+				printf("Failed to load media!\n");
+			 }
+			else {
+				bool quit = false;
+				SDL_Event event;
+				while (!quit) {
+					while (SDL_PollEvent(&event) != 0) {
+
+					}
+					SDL_RenderClear(gRenderer);
+					SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);
+				    SDL_RenderPresent(gRenderer);
+				}
+
+			}
 			//if (!loadMedia())
 			//{
 			//	printf("Failed to load media!\n");

@@ -152,6 +152,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Muro.cpp" />
     <ClCompile Include="principal.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bomber.h" />
@@ -163,6 +164,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Muro.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PBomberManUSFX.rc" />
