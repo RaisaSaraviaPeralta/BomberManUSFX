@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
-//#include <string>
-//#include <stdlib.h>
-//#include <time.h>
-//#include <vector>
+#include <string>
+#include <stdlib.h>
+#include <time.h>
+#include <vector>
 
 #include <SDL.h>
 //#include <SDL_image.h>
@@ -14,7 +14,7 @@ const int SCREEN_HEIGHT = 600;
 
 class GameManager
 {
-private:
+public:
 	/*SDL_Window* gWindow;
 	SDL_Renderer* gRenderer;*/
 	SDL_Window* gWindow = NULL;
