@@ -5,52 +5,32 @@ GameManager::GameManager() {
 }
 
 bool GameManager::onInit() {
-	//Initialization flag
-	bool success = true;
+    //Initialization flag
+    bool success = true;
 
-	//Initialize SDL
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
-	{
-		cout << "SDL could not initialize! SDL_Error: " << SDL_GetError() << endl;
-		success = false;
-	}
-	else
-	{
-		//Create window
-		gWindow = SDL_CreateWindow("Bomberman USFX", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-		if (gWindow == nullptr)
-		{
-			cout << "Window could not be created! SDL_Error: " << SDL_GetError() << endl;
-			success = false;
-		}
-		else
-		{
+    //Initialize SDL
+    if (SDL_Init(SDL_INIT_VIDEO) < 0)
+    {
+        printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
+        success = false;
+    }
+    else
+    {
+        //Create window
+        gWindow = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        if (gWindow == NULL)
+        {
+            printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
+            success = false;
+        }
+        else
+        {
+            //Get window surface
+            gScreenSurface = SDL_GetWindowSurface(gWindow);
+        }
+    }
 
-			//Create vsynced renderer for window
-			gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-			if (gRenderer == nullptr)
-			{
-				cout << "Renderer could not be created! SDL Error: " << SDL_GetError() << endl;
-				success = false;
-			}
-			else
-			{
-				
-				//Initialize renderer color
-				/*SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
-				if (TTF_Init() == -1) {
-					cout << "Error inicializacion SDL_ttf" << TTF_GetError() << endl;
-					success = false;
-				}
-			}
-
-			//Texture::renderer = gRenderer;
-			*/
-			}
-		}
-
-		return success;
-	}
+    return success;
 };
 
 	int GameManager::onExecute(){

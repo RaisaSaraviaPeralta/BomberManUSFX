@@ -15,8 +15,9 @@ const int SCREEN_HEIGHT = 600;
 class GameManager
 {
 private:
-	SDL_Window* gWindow;
-	SDL_Renderer* gRenderer;
+	/*SDL_Window* gWindow;
+	SDL_Renderer* gRenderer;*/
+
 
 
 public:
