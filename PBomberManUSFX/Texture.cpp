@@ -48,16 +48,21 @@ bool Texture::loadFromImage(std::string path, Uint8 r, Uint8 g, Uint8 b)
 	return true;
 
 }
-void  Texture::render(int x, int y, SDL_Rect* clip, SDL_Rect* rect, double angle, SDL_Point* center, SDL_RendererFlip renderflip) {
+void  Texture::render(int x, int y, SDL_Rect* clip, SDL_Rect* rect, double angle, SDL_Point* center, SDL_RendererFlip renderFlip) {
 	if (renderer == nullptr) {
 		return;
 	}
 	if (rect == nullptr) {
-		SDL_Rect rect = { x,y,ancho,alto };
+		SDL_Rect rect2 = { x,y,ancho,alto };
 		if (clip != nullptr) {
-			rect.w = clip->w;
-			rect.h = clip->h;
+			rect2.w = clip->w;
+			rect2.h = clip->h;
+	
 		}
+		SDL_RenderCopyEx(renderer, texture, clip, &rect2, angle, center, renderFlip);
+	}
+	else {
+		SDL_RenderCopyEx(renderer, texture, clip, rect, angle, center, renderFlip);
 	}
 
 }

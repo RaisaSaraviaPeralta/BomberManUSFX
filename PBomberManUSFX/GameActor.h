@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "GameDirecctions.h"
+#include "Texture.h"
 
 
 class GameActor : public GameObject
@@ -23,7 +24,7 @@ protected:
 	int velocidad;
 	int energia;
 	int vidas;
-
+	Texture* textura;
 	/*Tile* tileActual;
 	Tile* tileSiguiente;*/
 
@@ -58,6 +59,9 @@ public:
 	int getEnergia() { return energia; }
 	int getVidas() { return vidas; }
 
+	Texture* getTextura() { return textura; }
+
+
 	/*Tile* getTileActual() { return tileActual; }
 	Tile* getTileSiguiente() { return tileSiguiente; }*/
 	GameDirection getDireccionActual() { return direccionActual; }
@@ -77,6 +81,8 @@ public:
 	void setVelocidad(int _velocidad) { velocidad = _velocidad; }
 	void setEnergia(int _energia) { energia = _energia; }
 	void setVidas(int _vidas) { vidas = _vidas; }
+	void setTextura(Texture* _textura) { textura = _textura;}
+
 
 	/*virtual void setTileActual(Tile* _tileNuevo) = 0;
 	void setTileSiguiente(Tile* _tileSiguiente) { tileSiguiente = _tileSiguiente; }*/
@@ -94,7 +100,7 @@ public:
 	int restarVida();*/
 
 	//Metodos virtuales, redefinidos o sobrecargados
-	virtual void render() {};
+	virtual void render();
 	virtual void update() {};
 	/*virtual void handleEvent(SDL_Event* event) {};
 	virtual void deleteGameObject() {};*/
