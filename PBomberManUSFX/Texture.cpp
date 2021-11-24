@@ -20,3 +20,25 @@ void Texture::free() {
 		alto = 0;
 	}
 }
+
+bool Texture::loadFromImage(std::string path, Uint8 r, Uint8 g, Uint8 b)
+{
+	free();
+
+	if (renderer == nullptr) {
+		std::cout << "No se cuenta con un renderizador" << std::endl;
+		return false;
+	}
+
+	SDL_Surface* imageSurface = IMG_Load(path.c_str());
+	if (imageSurface == nullptr) {
+		std::cout << "Error al cargar la imagen" << std::endl;
+	return false;
+	}
+
+	SDL_SetColorKey(imageSurface,SDL_TRUE, SDL_MapRGB(imageSurface->format, r, g, b));
+	texture = SDL_CreateTextureFromSurface(renderer, imageSurface);
+	
+	return false;
+
+}
