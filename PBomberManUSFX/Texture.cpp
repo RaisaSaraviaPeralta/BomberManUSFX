@@ -38,7 +38,13 @@ bool Texture::loadFromImage(std::string path, Uint8 r, Uint8 g, Uint8 b)
 
 	SDL_SetColorKey(imageSurface,SDL_TRUE, SDL_MapRGB(imageSurface->format, r, g, b));
 	texture = SDL_CreateTextureFromSurface(renderer, imageSurface);
-	
-	return false;
+	if (texture == nullptr) {
+		std::cout << "Error al cargar la textura" << std::endl;
+		return false;
+	}
+	ancho = imageSurface->w;
+	alto = imageSurface->h;
+	SDL_FreeSurface(imageSurface);
+	return true;
 
 }
