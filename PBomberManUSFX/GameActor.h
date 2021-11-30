@@ -10,8 +10,12 @@ class GameActor : public GameObject
 protected:
 	int posicionX;
 	int posicionY;
+
+	int imagenX;
+	int imagenY;
 	int ancho;
 	int alto;
+
 	bool solido;
 	bool indestructible;
 	bool visible;
@@ -37,14 +41,16 @@ public:
 	/*static TilesGraph* tilesGraph;*/
 
 	//Constructores & destructores
-	GameActor();
-	GameActor(string _nombre);
+	GameActor(Texture* textura);
+	
 	/*GameActor(Texture* _textura);
 	~GameActor();*/
 
 	// Metodos accesores
 	int getPosicionX() { return posicionX; }
-	int getPosiciony() { return posicionY; }
+	int getPosicionY() { return posicionY; }
+	int getImagenX() { return imagenX; }
+	int getImagenY() { return imagenY; }
 	int getAncho() { return ancho; }
 	int getAlto() { return alto; }
 	bool getSolido() { return solido; }
@@ -64,10 +70,12 @@ public:
 
 	/*Tile* getTileActual() { return tileActual; }
 	Tile* getTileSiguiente() { return tileSiguiente; }*/
-	GameDirection getDireccionActual() { return direccionActual; }
-	GameDirection getDireccionSiguiente() { return direccionSiguiente; }
+	//GameDirection getDireccionActual() { return direccionActual; }
+	//GameDirection getDireccionSiguiente() { return direccionSiguiente; }
 	void setPosicionX(int _posicionX) { posicionX = _posicionX; }
 	void setPosicionY(int _posicionY) { posicionY = _posicionY; }
+	void setImagenX(int _imagenX) { imagenX = _imagenX; }
+	void setImagenY(int _imagenY) { imagenY = _imagenY; }
 	void setAncho(int _ancho) { ancho = _ancho; }
 	void setAlto(int _alto) { alto = _alto; }
 	void setSolido(bool _solido) { solido = _solido; }
@@ -86,8 +94,8 @@ public:
 
 	/*virtual void setTileActual(Tile* _tileNuevo) = 0;
 	void setTileSiguiente(Tile* _tileSiguiente) { tileSiguiente = _tileSiguiente; }*/
-	void setDireccionActual(GameDirection _direccionActual) { direccionActual = _direccionActual; }
-	void setDireccionSiguiente(GameDirection _direccionSiguiente) { direccionSiguiente = _direccionSiguiente; }
+	//void setDireccionActual(GameDirection _direccionActual) { direccionActual = _direccionActual; }
+	//void setDireccionSiguiente(GameDirection _direccionSiguiente) { direccionSiguiente = _direccionSiguiente; }
 	/*void setFramesDireccion(int _framesDireccion) { framesDireccion = _framesDireccion; }
 	void setColisionador(SDL_Rect* _colisionador) { colisionador = _colisionador; }*/
 
