@@ -8,7 +8,7 @@ private:
 	
 public:
 	//Constructor
-	Bomber(Texture* textura);
+	Bomber(Texture* _textura);
 	
 	
 

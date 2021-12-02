@@ -11,6 +11,7 @@
 #include "Bomber.h"
 #include "Enemigo.h"
 #include "Explosion.h"
+#include "MuroMetalico.h"
 using namespace std;
 
 const int SCREEN_WIDTH = 800;
@@ -27,11 +28,11 @@ private:
 
 	//current displayed texture
 	SDL_Texture* gTexture = nullptr;
-	Texture* texturaBomber1;
-	Texture* texturaBomber2;
+	//Texture* texturaBomber1;
+	//Texture* texturaBomber2;
 
 
-	Texture* texturaEnemigo1;
+	/*Texture* texturaEnemigo1;
 	Texture* texturaEnemigo2;
 	Texture* texturaEnemigo3;
 	Texture* texturaEnemigo4;
@@ -40,6 +41,10 @@ private:
 	Texture* texturaExplosion1;
 	Texture* texturaExplosion2;
 	Texture* texturaExplosion3;
+
+	Texture* texturaMuroMetalico1;
+	Texture* texturaMuroMetalico2;
+	Texture* texturaMuroMetalico3;*/
 
 	vector<GameObject*>actoresJuego;
 
